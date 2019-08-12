@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Eventos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="eventos | async as events">
+    <ion-card class="welcome-card" *ngFor="let event of events" routerLink="/tabs/perfilEvento/{{event.key}}">
+      <ion-item href="">
+        <ion-card-header>
+          <ion-card-title>{{event.nome}}</ion-card-title>
+          <ion-card-subtitle>{{event.data}}</ion-card-subtitle>
+        </ion-card-header>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+</ion-content>
